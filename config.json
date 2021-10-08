@@ -84,6 +84,36 @@
             "selector": ".react-grid-layout",
             "link": "https://grafana.tokopedia.net/d/A4yLlmVMkBc/gcp-redislab-broadcaster-report?orgId=5",
             "timestampParams": "orgId=5&from={beginTimestamp}&to={endTimestamp}"
+        },
+        "datadog play-public": {
+            "selector": "#sub_board",
+            "link": "https://app.datadoghq.com/dashboard/cf4-2m2-nrn/play-public?from_ts=1632821329872&to_ts=1632824929872&live=true",
+            "timestampParams": "from_ts={beginTimestamp}&to_ts={endTimestamp}&live=false"
+        },
+        "datadog groupchat": {
+            "selector": "#sub_board",
+            "link": "https://app.datadoghq.com/dashboard/nae-2rb-chw/play-groupchat-socket-v2?from_ts=1631165114208&to_ts=1631168714208&live=true",
+            "timestampParams": "from_ts={beginTimestamp}&to_ts={endTimestamp}&live=false"
+        },
+        "datadog play DB": {
+            "selector": "#sub_board",
+            "link": "https://app.datadoghq.com/dashboard/nfx-j4d-dws/peasant-database-dashboard?tpl_var_database=tokopedia-play&from_ts=1631165148703&to_ts=1631168748703&live=true",
+            "timestampParams": "tpl_var_database=tokopedia-play&from_ts={beginTimestamp}&to_ts={endTimestamp}&live=false"
+        },
+        "datadog play-3rd-party": {
+            "selector": "#sub_board",
+            "link": "https://app.datadoghq.com/dashboard/85w-nke-uyd/play-3rd-party?from_ts=1632844258026&to_ts=1632847858026&live=true",
+            "timestampParams": "from_ts={beginTimestamp}&to_ts={endTimestamp}&live=false"
+        },
+        "datadog play-broadcaster": {
+            "selector": "#sub_board",
+            "link": "https://app.datadoghq.com/dashboard/wqm-dgh-dtb/cmp-broadcaster?from_ts=1632844390874&to_ts=1632847990874&live=true",
+            "timestampParams": "from_ts={beginTimestamp}&to_ts={endTimestamp}&live=false"
+        },
+        "datadog broadcaster DB": {
+            "selector": "#sub_board",
+            "link": "https://app.datadoghq.com/dashboard/nfx-j4d-dws/peasant-database-dashboard?tpl_var_database=tokopedia-broadcaster&from_ts=1633673762789&to_ts=1633677362789&live=true",
+            "timestampParams": "tpl_var_database=tokopedia-broadcaster&from_ts={beginTimestamp}&to_ts={endTimestamp}&live=false"
         }
         
     }

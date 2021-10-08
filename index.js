@@ -77,7 +77,7 @@ const generate = async (browser, config, links, key, begin, end) => {
     const page = await browser.newPage();
     let url = links[key].link;
     const selectorOptions = {
-        timeout: 120000,
+        timeout: 180000,
         visible: true,
     };
 
@@ -94,7 +94,7 @@ const generate = async (browser, config, links, key, begin, end) => {
     })
 
     await page.goto(url, {
-        waitUntil: 'networkidle2',
+        waitUntil: 'domcontentloaded',
         timeout: 120000
     });
 

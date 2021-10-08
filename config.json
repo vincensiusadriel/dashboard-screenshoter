@@ -1,0 +1,90 @@
+{
+    "timeout": 10000,
+    "wsEndPoint": "ws://127.0.0.1:9222/devtools/browser/eb88a31c-79af-4f9c-97f0-058f5fe3f783",
+    "beginTimestamp": "2021-10-08 08:00:00",
+    "endTimestamp": "2021-10-08 09:00:00",
+    "specific": "",
+    "links": {
+        "grafana play-grpc": {
+            "selector": ".react-grid-layout",
+            "link": "https://grafana.tokopedia.net/d/JamYBJAMz/gcp-kube-mirrored-cluster-play-grpc?orgId=5&refresh=5s",
+            "timestampParams": "orgId=5&refresh=5s&from={beginTimestamp}&to={endTimestamp}"
+        },
+        "grafana play-cron": {
+            "selector": ".react-grid-layout",
+            "link": "https://grafana.tokopedia.net/d/hUc0Q10Mz/gcp-kube-mirrored-cluster-play-cron?orgId=5&from=now-1h&to=now",
+            "timestampParams": "orgId=5&from={beginTimestamp}&to={endTimestamp}"
+        },
+        "grafana elastic": {
+            "selector": ".react-grid-layout",
+            "link": "https://grafana.tokopedia.net/d/sRIPGxQGk/gcp-elasticsearch-play-es?orgId=5&refresh=1m",
+            "timestampParams": "orgId=5&refresh=1m&from={beginTimestamp}&to={endTimestamp}"
+        },
+        "grafana istio": {
+            "selector": ".react-grid-layout",
+            "link": "https://grafana.tokopedia.net/d/LJ_uJAvmk/gcp-kube-istio-service-dashboard?orgId=5&refresh=10s&from=now-3h&to=now&var-service=play-grpc.play.svc.cluster.local&var-srcns=All&var-srcwl=All&var-dstns=All&var-dstwl=All&var-datasource=Prometheus-istio-main-production-54ad1e",
+            "timestampParams": "orgId=5&refresh=10s&from={beginTimestamp}&to={endTimestamp}&var-service=play-grpc.play.svc.cluster.local&var-srcns=All&var-srcwl=All&var-dstns=All&var-dstwl=All&var-datasource=Prometheus-istio-main-production-54ad1e"
+        },
+        "grafana play-interactive-redis": {
+            "selector": ".react-grid-layout",
+            "link": "https://grafana-gcp.tokopedia.net/d/7qLlHScGk/redis-system-overview?orgId=1&var-hostgroup%5B%E2%80%A6%5Droxy=affiliate-engine-redis-proxy&var-instance_proxy=All",
+            "timestampParams": "orgId=1&var-hostgroup%5B%E2%80%A6%5Droxy=affiliate-engine-redis-proxy&var-instance_proxy=All&from={beginTimestamp}&to={endTimestamp}"
+        },
+        "grafana play-interactive-db": {
+            "selector": ".react-grid-layout",
+            "link": "https://grafana-gcp.tokopedia.net/d/SwZS6zeWz/postgresql-loadtest-monitoring?orgId=1&var-service=tokopedia-play-interactive&var-instance=All",
+            "timestampParams": "orgId=1&var-service=tokopedia-play-interactive&var-instance=All&from={beginTimestamp}&to={endTimestamp}"
+        },
+        "grafana play-interactive-nsq": {
+            "selector": ".react-grid-layout",
+            "link": "https://grafana.tokopedia.net/d/Yi1NuVWnz/gcp-node-alert-play-interactive-nsq?orgId=5",
+            "timestampParams": "orgId=5&from={beginTimestamp}&to={endTimestamp}"
+        },
+        "grafana play-interactive-grpc": {
+            "selector": ".react-grid-layout",
+            "link": "https://grafana.tokopedia.net/d/cUnKJ7m7z/gcp-node-alert-play-interactive-grpc?orgId=5",
+            "timestampParams": "orgId=5&from={beginTimestamp}&to={endTimestamp}"
+        },
+        "grafana broadcaster-grpc": {
+            "selector": ".react-grid-layout",
+            "link": "https://grafana.tokopedia.net/d/g4-CgbAGk/gcp-kube-mirrored-cluster-broadcaster-grpc?orgId=5",
+            "timestampParams": "orgId=5&from={beginTimestamp}&to={endTimestamp}"
+        },
+        "grafana broadcaster-cron": {
+            "selector": ".react-grid-layout",
+            "link": "https://grafana.tokopedia.net/d/igIImbAGz/gcp-kube-mirrored-cluster-broadcaster-cron?orgId=5&refresh=10s",
+            "timestampParams": "orgId=5&refresh=10s&from={beginTimestamp}&to={endTimestamp}"
+        },
+        "grafana broadcaster-mq": {
+            "selector": ".react-grid-layout",
+            "link": "https://grafana.tokopedia.net/d/88r4zL0Mz/gcp-kube-mirrored-cluster-broadcaster-mq?orgId=5&refresh=5s",
+            "timestampParams": "orgId=5&refresh=5s&from={beginTimestamp}&to={endTimestamp}"
+        },
+        "grafana broadcaster-report-grpc": {
+            "selector": ".react-grid-layout",
+            "link": "https://grafana.tokopedia.net/d/aJEtWb0Mk/gcp-kube-mirrored-cluster-broadcaster-report-grpc?orgId=5&refresh=10s",
+            "timestampParams": "orgId=5&refresh=10s&from={beginTimestamp}&to={endTimestamp}"
+        },
+        "grafana broadcaster-report-cron": {
+            "selector": ".react-grid-layout",
+            "link": "https://grafana.tokopedia.net/d/_PzyWx0Mz/gcp-kube-mirrored-cluster-broadcaster-report-cron?orgId=5&refresh=5s",
+            "timestampParams": "orgId=5&refresh=5s&from={beginTimestamp}&to={endTimestamp}"
+        },
+        "grafana broadcaster-report-nsq": {
+            "selector": ".react-grid-layout",
+            "link": "https://grafana.tokopedia.net/d/5EcJibAGz/gcp-kube-mirrored-cluster-broadcaster-report-nsq?orgId=5&refresh=5s",
+            "timestampParams": "orgId=5&refresh=5s&from={beginTimestamp}&to={endTimestamp}"
+        },
+        "grafana groupchat-socketv2": {
+            "selector": ".react-grid-layout",
+            "link": "https://grafana.tokopedia.net/d/fewg_10Mk/gcp-kube-mirrored-cluster-groupchat-socketv2?orgId=5",
+            "timestampParams": "orgId=5&from={beginTimestamp}&to={endTimestamp}"
+        },
+        "grafana redislab-broadcaster-report": {
+            "selector": ".react-grid-layout",
+            "link": "https://grafana.tokopedia.net/d/A4yLlmVMkBc/gcp-redislab-broadcaster-report?orgId=5",
+            "timestampParams": "orgId=5&from={beginTimestamp}&to={endTimestamp}"
+        }
+        
+    }
+}

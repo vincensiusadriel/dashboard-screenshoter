@@ -81,7 +81,7 @@ const generate = async (browser, config, links, key, begin, end) => {
         visible: true,
     };
 
-    if(begin != null && end != null) {
+    if(begin != null && end != null && (links[key].timestampParams != null && links[key].timestampParams != "")) {
         let timestampParams = links[key].timestampParams
         timestampParams = timestampParams.replace('{beginTimestamp}', begin).replace('{endTimestamp}', end)
         let arrStr = url.split("?")

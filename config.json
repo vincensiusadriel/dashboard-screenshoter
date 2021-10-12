@@ -1,8 +1,8 @@
 {
-    "timeout": 10000,
-    "wsEndPoint": "ws://127.0.0.1:9222/devtools/browser/eb88a31c-79af-4f9c-97f0-058f5fe3f783",
-    "beginTimestamp": "2021-10-08 08:00:00",
-    "endTimestamp": "2021-10-08 09:00:00",
+    "timeout": 20000,
+    "wsEndPoint": "ws://127.0.0.1:9222/devtools/browser/b06785c6-812d-4bf1-8f87-8ee03cbf1ae7",
+    "beginTimestamp": "2021-10-12 18:00:00",
+    "endTimestamp": "2021-10-12 21:00:00",
     "specific": "",
     "links": {
         "grafana play-grpc": {

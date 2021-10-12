@@ -1,5 +1,6 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
+const path = require('path')
 const moment = require('moment')
 
 const toTimestamp = (strDate) => {  
@@ -19,8 +20,10 @@ const toTimestamp = (strDate) => {
 
 (async() => {
 
+    console.log(process.cwd())
+
     
-    let raw = fs.readFileSync('config.json')
+    let raw = fs.readFileSync(path.join(process.cwd(), 'config.json'))
     let config = JSON.parse(raw)
 
     let [begin, err1] = toTimestamp(config.beginTimestamp)
@@ -65,12 +68,7 @@ const toTimestamp = (strDate) => {
 
 function wait (ms) {
     return new Promise(resolve => setTimeout(() => resolve(), ms));
-  }
-
-  const getClip = (element) => {
-    const { height, width, x, y } = element.getBoundingClientRect();
-    return { height, width, x, y };
-};
+}
 
 
 const generate = async (browser, config, links, key, begin, end) => {
@@ -98,6 +96,32 @@ const generate = async (browser, config, links, key, begin, end) => {
         timeout: 120000
     });
 
+    //#region fullpage screenshot
+
+    // await page.waitForSelector(links[key].selector, selectorOptions);
+    // let height = await eval(`page.$eval('${links[key].selector}', element => {
+    //     const { height } = element.getBoundingClientRect();
+    //     return height;
+    //   })`)
+
+    //   let clip = await eval(`page.$eval('${links[key].selector}', (element) => {
+    //     const { height, width, x, y } = element.getBoundingClientRect();
+    //     return { height, width, x, y };
+    // })`)
+
+    // await page.setViewport({
+    //     height: clip.height + clip.y,
+    //     width: 5000,
+    // });
+    // await page.reload({
+    //     waitUntil: 'domcontentloaded',
+    //     timeout: 120000
+    // });
+
+
+
+    //#endregion
+
     await page.waitForSelector(links[key].selector, selectorOptions);
 
     // Some extra delay to let images 
@@ -106,11 +130,25 @@ const generate = async (browser, config, links, key, begin, end) => {
     console.log(`${key}. Countdown finished`)
 
 
-    // await page.screenshot({type: 'png', path: i + '.png', fullPage: true});
-    let clip = await page.$eval(links[key].selector, getClip)
-    await page.screenshot({type: 'png', path: key + '.png', fullPage: false, clip: clip });
+
+    let imagePath = path.join(process.cwd(), key + '.png')
+
+    //#region fullpage screenshot
+    // await page.screenshot({type: 'png', path: imagePath, fullPage: true});
+    //#endregion
+
+    // //#region partial screenshot
+    let clip = await eval(`page.$eval('${links[key].selector}', (element) => {
+        const { height, width, x, y } = element.getBoundingClientRect();
+        return { height, width, x, y };
+    })`)
+
+    await page.screenshot({type: 'png', path: imagePath, fullPage: false, clip: { height: clip.height + clip.y + 10, width: clip.width + clip.x + 10, x: 0, y: 0 } });
     await wait(1000);
-    await page.screenshot({type: 'png', path: key + '.png', fullPage: false, clip: clip });
+    await page.screenshot({type: 'png', path: imagePath, fullPage: false, clip: { height: clip.height + clip.y + 10, width: clip.width + clip.x + 10, x: 0, y: 0 } });
+    // //#endregion
+    
+    
     console.log(`${key}. Image printed`)
 
 

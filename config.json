@@ -1,8 +1,8 @@
 {
-    "timeout": 20000,
+    "timeout": 10000,
     "wsEndPoint": "ws://127.0.0.1:9222/devtools/browser/b06785c6-812d-4bf1-8f87-8ee03cbf1ae7",
-    "beginTimestamp": "2021-10-12 18:00:00",
-    "endTimestamp": "2021-10-12 21:00:00",
+    "beginTimestamp": "2021-10-13 02:00:00",
+    "endTimestamp": "2021-10-13 02:43:00",
     "specific": "",
     "links": {
         "grafana play-grpc": {
@@ -19,6 +19,12 @@
             "selector": ".react-grid-layout",
             "link": "https://grafana.tokopedia.net/d/sRIPGxQGk/gcp-elasticsearch-play-es?orgId=5&refresh=1m",
             "timestampParams": "orgId=5&refresh=1m&from={beginTimestamp}&to={endTimestamp}"
+        },
+        "grafana redis-system-overview": {
+            "selector": ".react-grid-layout",
+            "link": "https://grafana.tokopedia.net/d/5J2rg_Snk/gcp-load-test-redis-system-overview?orgId=5",
+            "timestampParams": "orgId=5&from={beginTimestamp}&to={endTimestamp}"
+            
         },
         "grafana istio": {
             "selector": ".react-grid-layout",

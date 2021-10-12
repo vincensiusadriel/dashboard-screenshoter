@@ -54,7 +54,7 @@ const toTimestamp = (strDate) => {
         }
     } else {
         if(config.specific in links) {
-            await generate(browser, config, links, config.specific)
+            await generate(browser, config, links, config.specific, begin, end)
         } else {
             console.log("Key is not in links")
         }

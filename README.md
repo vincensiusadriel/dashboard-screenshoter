@@ -43,5 +43,6 @@ Example :
         "grafana play-grpc": {
             "selector": ".react-grid-layout",     //selector used to point which class or id in page containing the dashboard ( this is done to measure the snapshot size)
             "link": "https://somedashboard.net/d/DasHBoard/gcp-dashboard?orgId=5&refresh=5s", // dashboard link
-            "timestampParams": "orgId=5&refresh=5s&from={beginTimestamp}&to={endTimestamp}"               // parameter if there is timestamp ( some dashboard has totally different queryParams for timestamp, this will replace all the queryParams to a formatted timestamp queryParams), {beginTimestamp} and {endTimestamp} will be replaced with timestamp of the begin and end timestamp properties
+            "timestampParams": "orgId=5&refresh=5s&from={beginTimestamp}&to={endTimestamp}"               // parameter if there is timestamp ( some dashboard has totally different queryParams for timestamp, this will replace all the queryParams to a formatted timestamp queryParams), 
+            // {beginTimestamp} and {endTimestamp} will be replaced with timestamp of the begin and end timestamp properties
         },

@@ -3,6 +3,15 @@ const fs = require('fs');
 const path = require('path')
 const moment = require('moment')
 
+const wrapper = async (func) => {
+    try {
+        let data = await func
+        return [data, null]
+    } catch (error) {
+        return [null, error]
+    }
+}
+
 const toTimestamp = (strDate) => {  
     
 
@@ -38,25 +47,39 @@ const toTimestamp = (strDate) => {
         process.exit(0)
     }
 
-    const browser = await puppeteer.connect({
+    const [browser, err] = await wrapper(puppeteer.connect({
         browserWSEndpoint: config.wsEndPoint
-    });
+    }));
+
+    if(err != null) {
+        console.log('Error connecting to remote websocket')
+        process.exit(0)
+    }
     
     let links = config.links
 
     let arr = []
 
-    if (config.specific == '' || config.specific == null) {
+    if (config.specific == null || config.specific.length < 1 ) {
         for(let key in links) {
             // arr.push(
-                 await generate(browser, config, links, key, begin, end)
+                let [, someError] = await wrapper(generate(browser, config, links, key, begin, end))
+                if(someError != null) {
+                    console.log(someError)
+                }
             // )
         }
     } else {
-        if(config.specific in links) {
-            await generate(browser, config, links, config.specific, begin, end)
-        } else {
-            console.log("Key is not in links")
+        let specificLength = config.specific.length
+        for (let i = 0; i < specificLength; i++) {
+            if(config.specific[i] in links) {
+                let [, someError] = await wrapper(generate(browser, config, links, config.specific[i], begin, end))
+                if(someError != null) {
+                    console.log(someError)
+                }
+            } else {
+                console.log("Key is not in links")
+            }
         }
     }
     
@@ -72,7 +95,11 @@ function wait (ms) {
 
 
 const generate = async (browser, config, links, key, begin, end) => {
-    const page = await browser.newPage();
+    const [page, newPageError] = await wrapper(browser.newPage());
+    if(newPageError != null) {
+        console.log(newPageError)
+        process.exit(0)
+    }
     let url = links[key].link;
     const selectorOptions = {
         timeout: 180000,
@@ -86,15 +113,25 @@ const generate = async (browser, config, links, key, begin, end) => {
         url = arrStr[0] + "?" + timestampParams
     }
 
-    await page.setViewport({
+    const [, errSetViewPort] = await wrapper(page.setViewport({
         height: 9000,
         width: 5000,
-    })
+    }))
 
-    await page.goto(url, {
+    if(errSetViewPort != null) {
+        console.log(errSetViewPort)
+        process.exit(0)
+    }
+
+    const [, errGoTo] = await wrapper(page.goto(url, {
         waitUntil: 'domcontentloaded',
         timeout: 120000
-    });
+    }));
+
+    if(errGoTo != null) {
+        console.log(errGoTo)
+        process.exit(0)
+    }
 
     //#region fullpage screenshot
 
@@ -122,11 +159,21 @@ const generate = async (browser, config, links, key, begin, end) => {
 
     //#endregion
 
-    await page.waitForSelector(links[key].selector, selectorOptions);
+    const [, errWaitForSelector] = await wrapper(page.waitForSelector(links[key].selector, selectorOptions));
+
+    if(errWaitForSelector != null) {
+        console.log(errWaitForSelector)
+        process.exit(0)
+    }
 
     // Some extra delay to let images 
     console.log(`${key}. Initiating countdown`)
-    await wait(config.timeout);
+    const [, errWait] = await wrapper(wait(config.timeout));
+
+    if(errWait != null) {
+        console.log(errWait)
+        process.exit(0)
+    }
     console.log(`${key}. Countdown finished`)
 
 
@@ -138,22 +185,49 @@ const generate = async (browser, config, links, key, begin, end) => {
     //#endregion
 
     // //#region partial screenshot
-    let clip = await eval(`page.$eval('${links[key].selector}', (element) => {
+    let [clip, errEval] = await wrapper(eval(`page.$eval('${links[key].selector}', (element) => {
         const { height, width, x, y } = element.getBoundingClientRect();
         return { height, width, x, y };
-    })`)
+    })`))
 
-    await page.screenshot({type: 'png', path: imagePath, fullPage: false, clip: { height: clip.height + clip.y + 10, width: clip.width + clip.x + 10, x: 0, y: 0 } });
-    await wait(1000);
-    await page.screenshot({type: 'png', path: imagePath, fullPage: false, clip: { height: clip.height + clip.y + 10, width: clip.width + clip.x + 10, x: 0, y: 0 } });
+    if(errEval != null) {
+        console.log(errEval)
+        process.exit(0)
+    }
+
+    const [, errSS] = await wrapper(page.screenshot({type: 'png', path: imagePath, fullPage: false, clip: { height: clip.height + clip.y + 10, width: clip.width + clip.x + 10, x: 0, y: 0 } }));
+
+    if(errSS != null) {
+        console.log(errSS)
+        process.exit(0)
+    }
+
+    const [, errWait2] = await wrapper(wait(1000));
+
+    if(errWait2 != null) {
+        console.log(errWait2)
+        process.exit(0)
+    }
+    
+    const [, errSS1] = await wrapper(page.screenshot({type: 'png', path: imagePath, fullPage: false, clip: { height: clip.height + clip.y + 10, width: clip.width + clip.x + 10, x: 0, y: 0 } }));
+
+    if(errSS1 != null) {
+        console.log(errSS1)
+        process.exit(0)
+    }
+
     // //#endregion
     
     
     console.log(`${key}. Image printed`)
 
 
-    await page.close()   
+    const [, errClose] = await wrapper(page.close())   
 
+    if(errClose != null) {
+        console.log(errClose)
+        process.exit(0)
+    }
     console.log(`=====================================`)
 
 }

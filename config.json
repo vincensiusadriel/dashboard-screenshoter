@@ -1,9 +1,9 @@
 {
     "timeout": 10000,
-    "wsEndPoint": "ws://127.0.0.1:9222/devtools/browser/f755ea38-555e-424b-b812-a92c1d33b76f",
+    "wsEndPoint": "ws://127.0.0.1:9222/devtools/browser/bf6b3926-9ec8-49aa-855c-29b42747b383",
     "beginTimestamp": "2021-10-13 02:00:00",
     "endTimestamp": "2021-10-13 02:43:00",
-    "specific": "",
+    "specific": [],
     "links": {
         "grafana play-grpc": {
             "selector": ".react-grid-layout",

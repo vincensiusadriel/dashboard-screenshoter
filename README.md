@@ -11,7 +11,7 @@ A Mini app that automate screenshot dashboard process like Grafana Or DataDog us
 - Open Chrome Headless browser using the following command :
   - For Mac :
   ```
-    /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222 --no-first-run --headless --no-default-browser-check --user-data- dir=$(mktemp -d -t 'chrome-remote_data_dir')
+    /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222 --no-first-run --headless --no-default-browser-check --user-data-dir=$(mktemp -d -t 'chrome-remote_data_dir')
   ```
 
 - Once it is runned, it will output the following message : 

@@ -29,7 +29,7 @@ Example :
 
 - Click the about:blank link and enter the dashboard addresses, then enter the login credentials to the dashboard addresses you wish to view (This is done to bypass login session and make sure the app can take screenshot without have to be redirected to login pages)
 
-- After entering the login session run the app executable and enjoy :)
+- After entering the login session, change directory to the config.json folder and run the app executable and enjoy :)
 
 
 # Configuration

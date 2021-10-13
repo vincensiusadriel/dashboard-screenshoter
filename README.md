@@ -8,28 +8,28 @@ A Mini app that automate screenshot dashboard process like Grafana Or DataDog us
 # How to Use
 - First Copy the executable file (index-{ system name }) and the json in the same folder
 
-- Open Chrome Headless browser using the following command :
-  - For Mac :
+- Open **Chrome** Headless browser using the following command :
+  - For **Mac** :
   ```
-    /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222 --no-first-run --headless --no-default-browser-check --user-data- dir=$(mktemp -d -t 'chrome-remote_data_dir')
+    /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222 --no-first-run --headless --no-default-browser-check --user-data-dir=$(mktemp -d -t 'chrome-remote_data_dir')
   ```
 
-- Once it is runned, it will output the following message : 
+- Once it is run, it will output the following message : 
 ```
 DevTools listening on ws://127.0.0.1:9222/devtools/browser/eb88a31c-79af-4f9c-97f0-058f5fe3f783
 ```
 
-- Copy the websocket address to config.json on wsEndPoint ( keep in mind, that config.json must be in the same folder as the executable) :
+- Copy the websocket address to **config.json** on **wsEndPoint** ( keep in mind, that config.json must be in the same folder as the executable) :
 ```
 Example :
 "wsEndPoint": "ws://127.0.0.1:9222/devtools/browser/eb88a31c-79af-4f9c-97f0-058f5fe3f783",
 ```
 
-- Open Chrome, and enter address : "http://localhost:9222/", you will be prompted to view "Headless Remote Debugging Page"
+- Open **Chrome**, and enter address : "http://localhost:9222/", you will be prompted to view "Headless Remote Debugging Page"
 
-- Click the about:blank link and enter the dashboard addresses, then enter the login credentials to the dashboard addresses you wish to view (This is done to bypass login session and make sure the app can take screenshot without have to be redirected to login pages)
+- Click the about:blank link and enter the **dashboard addresses**, then enter the login credentials to the dashboard addresses you wish to view (This is done to bypass login session and make sure the app can take screenshot without have to be redirected to login pages)
 
-- After entering the login session run the app executable and enjoy :)
+- After entering the login session, **change directory** to the config.json folder and run the app executable and enjoy :)
 
 
 # Configuration

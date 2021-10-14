@@ -6,7 +6,7 @@ A Mini app that automate screenshot dashboard process like Grafana Or DataDog us
 
 
 # How to Use
-- First Copy the executable file (index-{ system name }) and the json in the same folder
+- First Copy the executable file (dashboard-screenshooter-{ OS name }) and the config.json in the same folder
 
 - Open **Chrome** Headless browser using the following command :
   - For **Mac** :

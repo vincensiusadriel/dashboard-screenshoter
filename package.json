@@ -2,10 +2,10 @@
   "name": "test-puppeteer",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dashboard-screenshooter.js",
   "scripts": {
-    "start": "node index.js",
-    "build": "pkg index.js --public",
+    "start": "node dashboard-screenshooter.js",
+    "build": "pkg dashboard-screenshooter.js --public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

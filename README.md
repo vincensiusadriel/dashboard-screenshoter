@@ -6,7 +6,7 @@ A Mini app that automate screenshot dashboard process like Grafana Or DataDog us
 
 
 # How to Use
-- First Copy the executable file (index-{ system name }) and the json in the same folder
+- First Copy the executable file (dashboard-screenshooter-{ OS name }) and the config.json in the same folder
 
 - Open **Chrome** Headless browser using the following command :
   - For **Mac** :
@@ -38,7 +38,7 @@ Example :
     "wsEndPoint": "ws://127.0.0.1:9222/devtools/browser/eb88a31c-79af-4f9c-97f0-058f5fe3f783",       //chrome remote debugging websocket address
     "beginTimestamp": "2021-10-08 08:00:00",      //dashboard begin timestamp (in datadog and grafana)
     "endTimestamp": "2021-10-08 09:00:00",        //dashboard end timestamp (in datadog and grafana)
-    "specific": "",                               //specify 1 specific link to screenshot (to provide retake if something goes wrong), ex : grafana play-grpc
+    "specific": [],                               //specify 1 or many specific link key to screenshot (to provide retake if something goes wrong), ex : ["grafana play-grpc"]
     "links": {                                    //list of link in key value pair (key = filename, value = link configuration) 
         "grafana play-grpc": {
             "selector": ".react-grid-layout",     //selector used to point which class or id in page containing the dashboard ( this is done to measure the snapshot size)

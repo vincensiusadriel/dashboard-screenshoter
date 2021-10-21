@@ -1,9 +1,9 @@
 {
     "timeout": 15000,
-    "wsEndPoint": "ws://127.0.0.1:9222/devtools/browser/dfb73b10-742d-4d07-aba2-ab10ee6e6b35",
-    "beginTimestamp": "2021-10-13 02:00:00",
-    "endTimestamp": "2021-10-13 02:43:00",
-    "specific": ["grafana elastic"],
+    "wsEndPoint": "ws://127.0.0.1:9222/devtools/browser/58bbff14-49e5-4173-8659-973273384517",
+    "beginTimestamp": "2021-10-22 01:35:00",
+    "endTimestamp": "2021-10-22 02:00:00",
+    "specific": [],
     "links": {
         "grafana play-grpc": {
             "selector": ".react-grid-layout",
@@ -93,7 +93,21 @@
         "datadog play-public": {
             "selector": "#sub_board",
             "link": "https://app.datadoghq.com/dashboard/cf4-2m2-nrn/play-public?from_ts=1632821329872&to_ts=1632824929872&live=true",
-            "timestampParams": "from_ts={beginTimestamp}&to_ts={endTimestamp}&live=false"
+            "timestampParams": "from_ts={beginTimestamp}&to_ts={endTimestamp}&live=false",
+            "scrapper": [
+                {
+                    "selector": ".widget.query_value.widget--with_title",
+                    "titleSelector": ".widget__title-text",
+                    "titleText": "",
+                    "valueSelector": [".query-value__value", ".query-value__unit"]
+                },
+                {
+                    "selector": "#widget_1327558339247072",
+                    "titleSelector": ".widget__title-text",
+                    "titleText": "",
+                    "valueSelector": [".query-value__value", ".query-value__unit"]
+                }
+            ]
         },
         "datadog groupchat": {
             "selector": "#sub_board",

@@ -195,6 +195,60 @@ const generate = async (browser, config, links, key, begin, end) => {
         process.exit(0)
     }
 
+    if(links[key].scrapper != null) {
+        let scrapperLength = links[key].scrapper.length
+        let result = []
+        for(let i = 0; i < scrapperLength; i++) {
+            let scrapperObj = links[key].scrapper[i]
+            if(scrapperObj.selector != null && scrapperObj.selector != "") {
+                let [els,] = await wrapper(eval(`page.$$('${scrapperObj.selector}')`))
+
+                if(els != null) {
+                    for(let j  = 0; j < els.length; j++) {
+                        let title = ""
+                        if(scrapperObj.titleSelector == null || scrapperObj.titleSelector == "") {
+                            title = scrapperObj.titleText
+                        } else {
+                            [title, ] = await wrapper(eval(`els[j].$eval('${scrapperObj.titleSelector}', el => el.innerText);`))
+                            if(title == null) {
+                                title = scrapperObj.titleText
+                            }
+                        }
+
+                        let value = ""
+                        let isFirst = true
+    
+                        if(scrapperObj.valueSelector != null) {
+                            let scrapperValueLength = scrapperObj.valueSelector.length
+                            for(let k = 0; k < scrapperValueLength; k++) {
+                                let [tempValue, ] = await wrapper(eval(`els[j].$eval('${scrapperObj.valueSelector[k]}', el => el.innerText);`))
+
+                                if(tempValue == null) {
+                                    tempValue = ""
+                                }else {
+                                    if(isFirst) {
+                                        isFirst = false
+                                    } else {
+                                        tempValue = " " + tempValue
+                                    }
+                                }
+                                value += tempValue
+                            }
+                        }
+
+                        result.push({ title: title, value: value })
+                    }
+                }
+            }
+        }
+
+        if(result.length > 0) {
+            let stringResult = JSON.stringify(result)
+            fs.writeFileSync(`${key}.json`, stringResult)
+            console.log(`${key}. Scrapper file printed`)
+        }
+    }
+
     const [, errSS] = await wrapper(page.screenshot({type: 'png', path: imagePath, fullPage: false, clip: { height: clip.height + clip.y + 10, width: clip.width + clip.x + 10, x: 0, y: 0 } }));
 
     if(errSS != null) {

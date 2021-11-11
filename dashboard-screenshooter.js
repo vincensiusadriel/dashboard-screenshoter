@@ -197,7 +197,7 @@ const generate = async (browser, config, links, key, begin, end) => {
 
     if(links[key].scrapper != null) {
         let scrapperLength = links[key].scrapper.length
-        let result = []
+        let result = {}
         for(let i = 0; i < scrapperLength; i++) {
             let scrapperObj = links[key].scrapper[i]
             if(scrapperObj.selector != null && scrapperObj.selector != "") {
@@ -236,13 +236,13 @@ const generate = async (browser, config, links, key, begin, end) => {
                             }
                         }
 
-                        result.push({ title: title, value: value })
+                        result[title] = value
                     }
                 }
             }
         }
 
-        if(result.length > 0) {
+        if(Object.values(result).length > 0) {
             let stringResult = JSON.stringify(result)
             fs.writeFileSync(`${key}.json`, stringResult)
             console.log(`${key}. Scrapper file printed`)

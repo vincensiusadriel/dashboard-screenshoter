@@ -13,17 +13,58 @@ const wrapper = async (func) => {
 }
 
 const toTimestamp = (strDate) => {  
-    
-
     if (strDate == null || strDate == "") return [null, null]
 
     const dt = moment(strDate).unix() * 1000;  
     if(isNaN(dt)) {
-        return [null, "Cannot Convert Timestamp"]
+        return null
     }
-    return [dt, null];  
+    return dt  
+}  
+
+const replaceWithVar = (toReplace, globalVar, withDoubleQuote) => {
+    if (toReplace == null || toReplace == "") return ""
+    if (!(typeof toReplace == "string")) return ""
+    if (globalVar == null) return toReplace
     
-  }  
+    let i = 0
+    let lengthToReplace = toReplace.length
+    let finishString = ""
+    let variableName = ""
+    let startVar = false
+    while(i < lengthToReplace) {
+        if(toReplace[i] == "{") {
+            variableName = ""
+            startVar = true
+        } else if (toReplace[i] == "}") {
+            let val = globalVar[variableName]
+            if(val != null) {
+                if(withDoubleQuote == true) {
+                    finishString += ('"' + val + '"')
+                } else {
+                    finishString += (val + "")
+                }
+            }
+
+            variableName = ""
+            startVar = false
+        } else {
+            if(startVar == true) {
+                variableName += toReplace[i]
+            } else {
+                finishString += toReplace[i]
+            }
+        }
+        i++
+    }
+
+    try {
+        let result = eval(finishString)
+        return result == null ? "" : result
+    } catch (error) {
+        return finishString
+    }
+}
   
 
 
@@ -35,17 +76,15 @@ const toTimestamp = (strDate) => {
     let raw = fs.readFileSync(path.join(process.cwd(), 'config.json'))
     let config = JSON.parse(raw)
 
-    let [begin, err1] = toTimestamp(config.beginTimestamp)
-    if (err1 != null) {
-        console.log(err1)
-        process.exit(0)
+    //generate globalvar
+    let globalVar = config.globalVar
+    for(let key in globalVar) {
+        globalVar[key] = replaceWithVar(globalVar[key], globalVar, true)
     }
 
-    let [end, err2] = toTimestamp(config.endTimestamp)
-    if (err2 != null) {
-        console.log(err2)
-        process.exit(0)
-    }
+    console.log(globalVar)
+
+    //end generate globalvar
 
     const [browser, err] = await wrapper(puppeteer.connect({
         browserWSEndpoint: config.wsEndPoint
@@ -63,7 +102,7 @@ const toTimestamp = (strDate) => {
     if (config.specific == null || config.specific.length < 1 ) {
         for(let key in links) {
             // arr.push(
-                let [, someError] = await wrapper(generate(browser, config, links, key, begin, end))
+                let [, someError] = await wrapper(generate(browser, config, links, key, globalVar))
                 if(someError != null) {
                     console.log(someError)
                 }
@@ -73,7 +112,7 @@ const toTimestamp = (strDate) => {
         let specificLength = config.specific.length
         for (let i = 0; i < specificLength; i++) {
             if(config.specific[i] in links) {
-                let [, someError] = await wrapper(generate(browser, config, links, config.specific[i], begin, end))
+                let [, someError] = await wrapper(generate(browser, config, links, config.specific[i], globalVar))
                 if(someError != null) {
                     console.log(someError)
                 }
@@ -94,7 +133,7 @@ function wait (ms) {
 }
 
 
-const generate = async (browser, config, links, key, begin, end) => {
+const generate = async (browser, config, links, key, globalVar) => {
     const [page, newPageError] = await wrapper(browser.newPage());
     if(newPageError != null) {
         console.log(newPageError)
@@ -106,11 +145,11 @@ const generate = async (browser, config, links, key, begin, end) => {
         visible: true,
     };
 
-    if(begin != null && end != null && (links[key].timestampParams != null && links[key].timestampParams != "")) {
-        let timestampParams = links[key].timestampParams
-        timestampParams = timestampParams.replace('{beginTimestamp}', begin).replace('{endTimestamp}', end)
+    if(globalVar != null && (links[key].variabledParams != null && links[key].variabledParams != "")) {
+        let variabledParams = links[key].variabledParams
+        variabledParams = replaceWithVar(variabledParams, globalVar, false)
         let arrStr = url.split("?")
-        url = arrStr[0] + "?" + timestampParams
+        url = arrStr[0] + "?" + variabledParams
     }
 
     const [, errSetViewPort] = await wrapper(page.setViewport({

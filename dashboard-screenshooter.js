@@ -13,7 +13,7 @@ const wrapper = async (func) => {
 }
 
 const toTimestamp = (strDate) => {  
-    if (strDate == null || strDate == "") return [null, null]
+    if (strDate == null || strDate == "") return null
 
     const dt = moment(strDate).unix() * 1000;  
     if(isNaN(dt)) {

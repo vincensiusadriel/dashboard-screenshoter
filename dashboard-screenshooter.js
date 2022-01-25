@@ -217,7 +217,7 @@ const generate = async (browser, config, links, key, globalVar) => {
 
 
 
-    let imagePath = path.join(process.cwd(), key + '.png')
+    let imagePath = path.join(process.cwd(),key + '.png')
 
     //#region fullpage screenshot
     // await page.screenshot({type: 'png', path: imagePath, fullPage: true});
@@ -283,7 +283,7 @@ const generate = async (browser, config, links, key, globalVar) => {
 
         if(Object.values(result).length > 0) {
             let stringResult = JSON.stringify(result)
-            fs.writeFileSync(`${key}.json`, stringResult)
+            fs.writeFileSync(path.join(process.cwd(),key + '.json'), stringResult)
             console.log(`${key}. Scrapper file printed`)
         }
     }
@@ -295,19 +295,19 @@ const generate = async (browser, config, links, key, globalVar) => {
         process.exit(0)
     }
 
-    const [, errWait2] = await wrapper(wait(1000));
+    // const [, errWait2] = await wrapper(wait(1000));
 
-    if(errWait2 != null) {
-        console.log(errWait2)
-        process.exit(0)
-    }
+    // if(errWait2 != null) {
+    //     console.log(errWait2)
+    //     process.exit(0)
+    // }
     
-    const [, errSS1] = await wrapper(page.screenshot({type: 'png', path: imagePath, fullPage: false, clip: { height: clip.height + clip.y + 10, width: clip.width + clip.x + 10, x: 0, y: 0 } }));
+    // const [, errSS1] = await wrapper(page.screenshot({type: 'png', path: imagePath, fullPage: false, clip: { height: clip.height + clip.y + 10, width: clip.width + clip.x + 10, x: 0, y: 0 } }));
 
-    if(errSS1 != null) {
-        console.log(errSS1)
-        process.exit(0)
-    }
+    // if(errSS1 != null) {
+    //     console.log(errSS1)
+    //     process.exit(0)
+    // }
 
     // //#endregion
     

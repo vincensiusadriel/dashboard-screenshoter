@@ -1,23 +1,58 @@
 {
-  "timeout": 60000,
-  "wsEndPoint": "ws://127.0.0.1:9222/devtools/browser/c2811656-33cc-4f07-9aaf-d31e98828dc4",
+  "timeout": 20000,
+  "wsEndPoint": "ws://127.0.0.1:9222/devtools/browser/caae5df3-29af-47ce-a627-fa7a9481fe2e",
   "globalVar": {
-    "begin": "2021-12-20 21:00:00",
-    "end": "2021-12-20 22:30:00",
+    "begin": "2022-01-25 16:00:00",
+    "end": "2022-01-25 18:00:00",
     "beginTimestamp": "toTimestamp({begin})",
     "endTimestamp": "toTimestamp({end})",
-    "channelId": "212540"
+    "channelId": "272683"
   },
-  "specific": ["grafana play-grpc"],
+  "specific": [""],
   "links": {
+    "newrelic play interactive": {
+      "selector": ".react-grid-layout",
+      "link": "https://one.newrelic.com/launcher/dashboards.launcher?platform[filters]=IihuYW1lIExJS0UgJ3BsYXkgcHVibGljJyBPUiBpZCA9ICdwbGF5IHB1YmxpYycgT1IgZG9tYWluSWQgPSAncGxheSBwdWJsaWMnKSI=&pane=eyJuZXJkbGV0SWQiOiJkYXNoYm9hcmRzLmRldGFpbCIsInVzZURlZmF1bHRUaW1lUmFuZ2UiOmZhbHNlLCJzZWxlY3RlZFBhZ2UiOiJNekl5TVRrNE5IeFdTVnA4UkVGVFNFSlBRVkpFZkRJeU1EazBPVFUiLCJpc1RlbXBsYXRlRW1wdHkiOmZhbHNlLCJlbnRpdHlHdWlkIjoiTXpJeU1UazROSHhXU1ZwOFJFRlRTRUpQUVZKRWZHUmhPakU0TWpNME5nIn0=&state=c6c88409-26e6-09c1-a8ce-cdf81e54743e",
+      "variabledParams": "platform[filters]=IihuYW1lIExJS0UgJ3BsYXkgcHVibGljJyBPUiBpZCA9ICdwbGF5IHB1YmxpYycgT1IgZG9tYWluSWQgPSAncGxheSBwdWJsaWMnKSI=&platform[timeRange][begin_time]={beginTimestamp}&platform[timeRange][end_time]={endTimestamp}&pane=eyJuZXJkbGV0SWQiOiJkYXNoYm9hcmRzLmRldGFpbCIsInVzZURlZmF1bHRUaW1lUmFuZ2UiOmZhbHNlLCJzZWxlY3RlZFBhZ2UiOiJNekl5TVRrNE5IeFdTVnA4UkVGVFNFSlBRVkpFZkRJeU1EazBPVFUiLCJpc1RlbXBsYXRlRW1wdHkiOmZhbHNlLCJlbnRpdHlHdWlkIjoiTXpJeU1UazROSHhXU1ZwOFJFRlRTRUpQUVZKRWZHUmhPakU0TWpNME5nIn0=&state=c6c88409-26e6-09c1-a8ce-cdf81e54743e"
+    },
+    "newrelic play summary": {
+      "selector": ".react-grid-layout",
+      "link": "https://one.newrelic.com/launcher/dashboards.launcher?platform[filters]=IihuYW1lIExJS0UgJ3BsYXkgcHVibGljJyBPUiBpZCA9ICdwbGF5IHB1YmxpYycgT1IgZG9tYWluSWQgPSAncGxheSBwdWJsaWMnKSI=&pane=eyJuZXJkbGV0SWQiOiJkYXNoYm9hcmRzLmRldGFpbCIsInVzZURlZmF1bHRUaW1lUmFuZ2UiOmZhbHNlLCJzZWxlY3RlZFBhZ2UiOiJNekl5TVRrNE5IeFdTVnA4UkVGVFNFSlBRVkpFZkRJeU9EWTJNak0iLCJpc1RlbXBsYXRlRW1wdHkiOmZhbHNlLCJlbnRpdHlHdWlkIjoiTXpJeU1UazROSHhXU1ZwOFJFRlRTRUpQUVZKRWZHUmhPakU1TVRFNU9BIn0=&state=7b24ac68-b040-f15b-6efc-f705029911bc",
+      "variabledParams": "platform[filters]=IihuYW1lIExJS0UgJ3BsYXkgcHVibGljJyBPUiBpZCA9ICdwbGF5IHB1YmxpYycgT1IgZG9tYWluSWQgPSAncGxheSBwdWJsaWMnKSI=&platform[timeRange][begin_time]={beginTimestamp}&platform[timeRange][end_time]={endTimestamp}&pane=eyJuZXJkbGV0SWQiOiJkYXNoYm9hcmRzLmRldGFpbCIsInNlbGVjdGVkUGFnZSI6Ik16SXlNVGs0Tkh4V1NWcDhSRUZUU0VKUFFWSkVmREl5T0RZMk1qTSIsImlzVGVtcGxhdGVFbXB0eSI6ZmFsc2UsInVzZURlZmF1bHRUaW1lUmFuZ2UiOmZhbHNlLCJlbnRpdHlHdWlkIjoiTXpJeU1UazROSHhXU1ZwOFJFRlRTRUpQUVZKRWZHUmhPakU1TVRFNU9BIn0=&state=7b24ac68-b040-f15b-6efc-f705029911bc"
+    },
+    "newrelic entrypoint": {
+      "selector": ".react-grid-layout",
+      "link": "https://one.newrelic.com/launcher/dashboards.launcher?platform[filters]=IihuYW1lIExJS0UgJ3BsYXkgcHVibGljJyBPUiBpZCA9ICdwbGF5IHB1YmxpYycgT1IgZG9tYWluSWQgPSAncGxheSBwdWJsaWMnKSI=&pane=eyJuZXJkbGV0SWQiOiJkYXNoYm9hcmRzLmRldGFpbCIsInVzZURlZmF1bHRUaW1lUmFuZ2UiOmZhbHNlLCJzZWxlY3RlZFBhZ2UiOiJNekl5TVRrNE5IeFdTVnA4UkVGVFNFSlBRVkpFZkRNd016TTRORGsiLCJpc1RlbXBsYXRlRW1wdHkiOmZhbHNlLCJlbnRpdHlHdWlkIjoiTXpJeU1UazROSHhXU1ZwOFJFRlRTRUpQUVZKRWZHUmhPall3T1RBd01RIn0=&state=9779ff83-d96c-883e-e7a3-1cc9662b0cbc",
+      "variabledParams": "platform[filters]=IihuYW1lIExJS0UgJ3BsYXkgcHVibGljJyBPUiBpZCA9ICdwbGF5IHB1YmxpYycgT1IgZG9tYWluSWQgPSAncGxheSBwdWJsaWMnKSI=&platform[timeRange][begin_time]={beginTimestamp}&platform[timeRange][end_time]={endTimestamp}&pane=eyJuZXJkbGV0SWQiOiJkYXNoYm9hcmRzLmRldGFpbCIsInVzZURlZmF1bHRUaW1lUmFuZ2UiOmZhbHNlLCJzZWxlY3RlZFBhZ2UiOiJNekl5TVRrNE5IeFdTVnA4UkVGVFNFSlBRVkpFZkRNd016TTRORGsiLCJpc1RlbXBsYXRlRW1wdHkiOmZhbHNlLCJlbnRpdHlHdWlkIjoiTXpJeU1UazROSHhXU1ZwOFJFRlRTRUpQUVZKRWZHUmhPall3T1RBd01RIn0=&state=9779ff83-d96c-883e-e7a3-1cc9662b0cbc"
+    },
+    "newrelic channelroom": {
+      "selector": ".react-grid-layout",
+      "link": "https://one.newrelic.com/launcher/dashboards.launcher?platform[filters]=IihuYW1lIExJS0UgJ3BsYXkgcHVibGljJyBPUiBpZCA9ICdwbGF5IHB1YmxpYycgT1IgZG9tYWluSWQgPSAncGxheSBwdWJsaWMnKSI=&pane=eyJuZXJkbGV0SWQiOiJkYXNoYm9hcmRzLmRldGFpbCIsInVzZURlZmF1bHRUaW1lUmFuZ2UiOmZhbHNlLCJzZWxlY3RlZFBhZ2UiOiJNekl5TVRrNE5IeFdTVnA4UkVGVFNFSlBRVkpFZkRNd016UTBNek0iLCJpc1RlbXBsYXRlRW1wdHkiOmZhbHNlLCJlbnRpdHlHdWlkIjoiTXpJeU1UazROSHhXU1ZwOFJFRlRTRUpQUVZKRWZHUmhPall3T1RBd01RIn0=&state=27ebf8dd-d479-0fe8-54f6-db3c1c075793",
+      "variabledParams": "platform[filters]=IihuYW1lIExJS0UgJ3BsYXkgcHVibGljJyBPUiBpZCA9ICdwbGF5IHB1YmxpYycgT1IgZG9tYWluSWQgPSAncGxheSBwdWJsaWMnKSI=&platform[timeRange][begin_time]={beginTimestamp}&platform[timeRange][end_time]={endTimestamp}&pane=eyJuZXJkbGV0SWQiOiJkYXNoYm9hcmRzLmRldGFpbCIsInVzZURlZmF1bHRUaW1lUmFuZ2UiOmZhbHNlLCJzZWxlY3RlZFBhZ2UiOiJNekl5TVRrNE5IeFdTVnA4UkVGVFNFSlBRVkpFZkRNd016UTBNek0iLCJpc1RlbXBsYXRlRW1wdHkiOmZhbHNlLCJlbnRpdHlHdWlkIjoiTXpJeU1UazROSHhXU1ZwOFJFRlRTRUpQUVZKRWZHUmhPall3T1RBd01RIn0=&state=27ebf8dd-d479-0fe8-54f6-db3c1c075793"
+    },
+    "newrelic interactive": {
+      "selector": ".react-grid-layout",
+      "link": "https://one.newrelic.com/launcher/dashboards.launcher?platform[filters]=IihuYW1lIExJS0UgJ3BsYXkgcHVibGljJyBPUiBpZCA9ICdwbGF5IHB1YmxpYycgT1IgZG9tYWluSWQgPSAncGxheSBwdWJsaWMnKSI=&pane=eyJuZXJkbGV0SWQiOiJkYXNoYm9hcmRzLmRldGFpbCIsInVzZURlZmF1bHRUaW1lUmFuZ2UiOmZhbHNlLCJzZWxlY3RlZFBhZ2UiOiJNekl5TVRrNE5IeFdTVnA4UkVGVFNFSlBRVkpFZkRNd016UTVNamMiLCJpc1RlbXBsYXRlRW1wdHkiOmZhbHNlLCJlbnRpdHlHdWlkIjoiTXpJeU1UazROSHhXU1ZwOFJFRlRTRUpQUVZKRWZHUmhPall3T1RBd01RIn0=&state=d9613554-65fc-9cc6-900a-3fcb3dcc1a1b",
+      "variabledParams": "platform[filters]=IihuYW1lIExJS0UgJ3BsYXkgcHVibGljJyBPUiBpZCA9ICdwbGF5IHB1YmxpYycgT1IgZG9tYWluSWQgPSAncGxheSBwdWJsaWMnKSI=&platform[timeRange][begin_time]={beginTimestamp}&platform[timeRange][end_time]={endTimestamp}&pane=eyJuZXJkbGV0SWQiOiJkYXNoYm9hcmRzLmRldGFpbCIsInVzZURlZmF1bHRUaW1lUmFuZ2UiOmZhbHNlLCJzZWxlY3RlZFBhZ2UiOiJNekl5TVRrNE5IeFdTVnA4UkVGVFNFSlBRVkpFZkRNd016UTVNamMiLCJpc1RlbXBsYXRlRW1wdHkiOmZhbHNlLCJlbnRpdHlHdWlkIjoiTXpJeU1UazROSHhXU1ZwOFJFRlRTRUpQUVZKRWZHUmhPall3T1RBd01RIn0=&state=d9613554-65fc-9cc6-900a-3fcb3dcc1a1b"
+    },
+    "newrelic socket": {
+      "selector": ".react-grid-layout",
+      "link": "https://one.newrelic.com/launcher/dashboards.launcher?platform[filters]=IihuYW1lIExJS0UgJ3BsYXkgcHVibGljJyBPUiBpZCA9ICdwbGF5IHB1YmxpYycgT1IgZG9tYWluSWQgPSAncGxheSBwdWJsaWMnKSI=&pane=eyJuZXJkbGV0SWQiOiJkYXNoYm9hcmRzLmRldGFpbCIsInVzZURlZmF1bHRUaW1lUmFuZ2UiOmZhbHNlLCJzZWxlY3RlZFBhZ2UiOiJNekl5TVRrNE5IeFdTVnA4UkVGVFNFSlBRVkpFZkRNd016UTVNelUiLCJpc1RlbXBsYXRlRW1wdHkiOmZhbHNlLCJlbnRpdHlHdWlkIjoiTXpJeU1UazROSHhXU1ZwOFJFRlRTRUpQUVZKRWZHUmhPall3T1RBd01RIn0=&state=c922225d-8331-a895-49e0-d06639a545b9",
+      "variabledParams": "platform[filters]=IihuYW1lIExJS0UgJ3BsYXkgcHVibGljJyBPUiBpZCA9ICdwbGF5IHB1YmxpYycgT1IgZG9tYWluSWQgPSAncGxheSBwdWJsaWMnKSI=&platform[timeRange][begin_time]={beginTimestamp}&platform[timeRange][end_time]={endTimestamp}&pane=eyJuZXJkbGV0SWQiOiJkYXNoYm9hcmRzLmRldGFpbCIsInVzZURlZmF1bHRUaW1lUmFuZ2UiOmZhbHNlLCJzZWxlY3RlZFBhZ2UiOiJNekl5TVRrNE5IeFdTVnA4UkVGVFNFSlBRVkpFZkRNd016UTVNelUiLCJpc1RlbXBsYXRlRW1wdHkiOmZhbHNlLCJlbnRpdHlHdWlkIjoiTXpJeU1UazROSHhXU1ZwOFJFRlRTRUpQUVZKRWZHUmhPall3T1RBd01RIn0=&state=c922225d-8331-a895-49e0-d06639a545b9"
+    },
     "grafana play-grpc": {
       "selector": ".react-grid-layout",
-      "link": "https://grafana.tokopedia.net/d/JamYBJAMz/gcp-kube-mirrored-cluster-play-grpc?orgId=5&refresh=5s",
+      "link": "https://grafana.tokopedia.net/d/SIhv5217z/gcp-node-alert-play-grpc?orgId=5&from=now-15m&to=now",
       "variabledParams": "orgId=5&refresh=5s&from={beginTimestamp}&to={endTimestamp}"
     },
     "grafana play-cron": {
       "selector": ".react-grid-layout",
-      "link": "https://grafana.tokopedia.net/d/hUc0Q10Mz/gcp-kube-mirrored-cluster-play-cron?orgId=5&from=now-1h&to=now",
+      "link": "https://grafana.tokopedia.net/d/PuERh217z/gcp-node-alert-play-cron?orgId=5&from=now-15m&to=now",
+      "variabledParams": "orgId=5&from={beginTimestamp}&to={endTimestamp}"
+    },
+    "grafana play-nsq": {
+      "selector": ".react-grid-layout",
+      "link": "https://grafana.tokopedia.net/d/tIdWthJnk/gcp-node-alert-play-nsq?orgId=5&from=now-15m&to=now",
       "variabledParams": "orgId=5&from={beginTimestamp}&to={endTimestamp}"
     },
     "grafana elastic": {
@@ -57,17 +92,17 @@
     },
     "grafana broadcaster-grpc": {
       "selector": ".react-grid-layout",
-      "link": "https://grafana.tokopedia.net/d/g4-CgbAGk/gcp-kube-mirrored-cluster-broadcaster-grpc?orgId=5",
+      "link": "https://grafana.tokopedia.net/d/unAAb2Jnk/gcp-node-alert-broadcaster-grpc?orgId=5&from=now-15m&to=now",
       "variabledParams": "orgId=5&from={beginTimestamp}&to={endTimestamp}"
     },
     "grafana broadcaster-cron": {
       "selector": ".react-grid-layout",
-      "link": "https://grafana.tokopedia.net/d/igIImbAGz/gcp-kube-mirrored-cluster-broadcaster-cron?orgId=5&refresh=10s",
+      "link": "https://grafana.tokopedia.net/d/sTXtfhJ7k/gcp-node-alert-broadcaster-cron?orgId=5&from=now-15m&to=now",
       "variabledParams": "orgId=5&refresh=10s&from={beginTimestamp}&to={endTimestamp}"
     },
     "grafana broadcaster-mq": {
       "selector": ".react-grid-layout",
-      "link": "https://grafana.tokopedia.net/d/88r4zL0Mz/gcp-kube-mirrored-cluster-broadcaster-mq?orgId=5&refresh=5s",
+      "link": "https://grafana.tokopedia.net/d/-ANha2J7k/gcp-node-alert-broadcaster-mq?orgId=5&from=now-15m&to=now",
       "variabledParams": "orgId=5&refresh=5s&from={beginTimestamp}&to={endTimestamp}"
     },
     "grafana broadcaster-report-grpc": {
@@ -77,17 +112,17 @@
     },
     "grafana broadcaster-report-cron": {
       "selector": ".react-grid-layout",
-      "link": "https://grafana.tokopedia.net/d/_PzyWx0Mz/gcp-kube-mirrored-cluster-broadcaster-report-cron?orgId=5&refresh=5s",
+      "link": "https://grafana.tokopedia.net/d/vy1ehh17k/gcp-node-alert-broadcaster-report-cron?orgId=5",
       "variabledParams": "orgId=5&refresh=5s&from={beginTimestamp}&to={endTimestamp}"
     },
     "grafana broadcaster-report-nsq": {
       "selector": ".react-grid-layout",
-      "link": "https://grafana.tokopedia.net/d/5EcJibAGz/gcp-kube-mirrored-cluster-broadcaster-report-nsq?orgId=5&refresh=5s",
+      "link": "https://grafana.tokopedia.net/d/o1MSE21nk/gcp-node-alert-broadcaster-report-nsq?orgId=5",
       "variabledParams": "orgId=5&refresh=5s&from={beginTimestamp}&to={endTimestamp}"
     },
     "grafana groupchat-socketv2": {
       "selector": ".react-grid-layout",
-      "link": "https://grafana.tokopedia.net/d/fewg_10Mk/gcp-kube-mirrored-cluster-groupchat-socketv2?orgId=5",
+      "link": "https://grafana.tokopedia.net/d/v2OvTh1nz/gcp-node-alert-groupchat-socketv2?orgId=5&from=now-15m&to=now",
       "variabledParams": "orgId=5&from={beginTimestamp}&to={endTimestamp}"
     },
     "grafana redislab-broadcaster-report": {

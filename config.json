@@ -1,14 +1,14 @@
 {
   "timeout": 20000,
-  "wsEndPoint": "ws://127.0.0.1:9222/devtools/browser/caae5df3-29af-47ce-a627-fa7a9481fe2e",
+  "wsEndPoint": "ws://127.0.0.1:9222/devtools/browser/00d83196-a663-402e-aa7d-f9280f24a533",
   "globalVar": {
-    "begin": "2022-01-25 16:00:00",
-    "end": "2022-01-25 18:00:00",
+    "begin": "2022-03-03 18:30:00",
+    "end": "2022-03-03 20:00:00",
     "beginTimestamp": "toTimestamp({begin})",
     "endTimestamp": "toTimestamp({end})",
-    "channelId": "272683"
+    "channelId": "319470"
   },
-  "specific": [""],
+  "specific": ["grafana redislab-broadcaster-report"],
   "links": {
     "newrelic play interactive": {
       "selector": ".react-grid-layout",
@@ -40,6 +40,51 @@
       "link": "https://one.newrelic.com/launcher/dashboards.launcher?platform[filters]=IihuYW1lIExJS0UgJ3BsYXkgcHVibGljJyBPUiBpZCA9ICdwbGF5IHB1YmxpYycgT1IgZG9tYWluSWQgPSAncGxheSBwdWJsaWMnKSI=&pane=eyJuZXJkbGV0SWQiOiJkYXNoYm9hcmRzLmRldGFpbCIsInVzZURlZmF1bHRUaW1lUmFuZ2UiOmZhbHNlLCJzZWxlY3RlZFBhZ2UiOiJNekl5TVRrNE5IeFdTVnA4UkVGVFNFSlBRVkpFZkRNd016UTVNelUiLCJpc1RlbXBsYXRlRW1wdHkiOmZhbHNlLCJlbnRpdHlHdWlkIjoiTXpJeU1UazROSHhXU1ZwOFJFRlRTRUpQUVZKRWZHUmhPall3T1RBd01RIn0=&state=c922225d-8331-a895-49e0-d06639a545b9",
       "variabledParams": "platform[filters]=IihuYW1lIExJS0UgJ3BsYXkgcHVibGljJyBPUiBpZCA9ICdwbGF5IHB1YmxpYycgT1IgZG9tYWluSWQgPSAncGxheSBwdWJsaWMnKSI=&platform[timeRange][begin_time]={beginTimestamp}&platform[timeRange][end_time]={endTimestamp}&pane=eyJuZXJkbGV0SWQiOiJkYXNoYm9hcmRzLmRldGFpbCIsInVzZURlZmF1bHRUaW1lUmFuZ2UiOmZhbHNlLCJzZWxlY3RlZFBhZ2UiOiJNekl5TVRrNE5IeFdTVnA4UkVGVFNFSlBRVkpFZkRNd016UTVNelUiLCJpc1RlbXBsYXRlRW1wdHkiOmZhbHNlLCJlbnRpdHlHdWlkIjoiTXpJeU1UazROSHhXU1ZwOFJFRlRTRUpQUVZKRWZHUmhPall3T1RBd01RIn0=&state=c922225d-8331-a895-49e0-d06639a545b9"
     },
+    "datadog play-public": {
+      "selector": "#sub_board",
+      "link": "https://app.datadoghq.com/dashboard/cf4-2m2-nrn/play-public?from_ts=1632821329872&to_ts=1632824929872&live=true",
+      "variabledParams": "tpl_var_channel_wib={channelId}&from_ts={beginTimestamp}&to_ts={endTimestamp}&live=false",
+      "scrapper": [
+        {
+          "selector": ".widget.query_value.widget--with_title",
+          "titleSelector": ".widget__title-text",
+          "titleText": "",
+          "valueSelector": [".query-value__value", ".query-value__unit"]
+        },
+        {
+          "selector": "#widget_1327558339247072",
+          "titleSelector": ".widget__title-text",
+          "titleText": "",
+          "valueSelector": [".query-value__value", ".query-value__unit"]
+        }
+      ]
+    },
+    "datadog groupchat": {
+      "selector": "#sub_board",
+      "link": "https://app.datadoghq.com/dashboard/nae-2rb-chw/play-groupchat-socket-v2?from_ts=1631165114208&to_ts=1631168714208&live=true",
+      "variabledParams": "tpl_var_channel_wib={channelId}&from_ts={beginTimestamp}&to_ts={endTimestamp}&live=false"
+    },
+    "datadog play DB": {
+      "selector": "#sub_board",
+      "link": "https://app.datadoghq.com/dashboard/nfx-j4d-dws/peasant-database-dashboard?tpl_var_database=tokopedia-play&from_ts=1631165148703&to_ts=1631168748703&live=true",
+      "variabledParams": "tpl_var_database=tokopedia-play&from_ts={beginTimestamp}&to_ts={endTimestamp}&live=false"
+    },
+    "datadog play-3rd-party": {
+      "selector": "#sub_board",
+      "link": "https://app.datadoghq.com/dashboard/85w-nke-uyd/play-3rd-party?from_ts=1632844258026&to_ts=1632847858026&live=true",
+      "variabledParams": "from_ts={beginTimestamp}&to_ts={endTimestamp}&live=false"
+    },
+    "datadog play-broadcaster": {
+      "selector": "#sub_board",
+      "link": "https://app.datadoghq.com/dashboard/wqm-dgh-dtb/cmp-broadcaster?from_ts=1632844390874&to_ts=1632847990874&live=true",
+      "variabledParams": "from_ts={beginTimestamp}&to_ts={endTimestamp}&live=false"
+    },
+    "datadog broadcaster DB": {
+      "selector": "#sub_board",
+      "link": "https://app.datadoghq.com/dashboard/nfx-j4d-dws/peasant-database-dashboard?tpl_var_database=tokopedia-broadcaster&from_ts=1633673762789&to_ts=1633677362789&live=true",
+      "variabledParams": "tpl_var_database=tokopedia-broadcaster&from_ts={beginTimestamp}&to_ts={endTimestamp}&live=false"
+    },
+
     "grafana play-grpc": {
       "selector": ".react-grid-layout",
       "link": "https://grafana.tokopedia.net/d/SIhv5217z/gcp-node-alert-play-grpc?orgId=5&from=now-15m&to=now",
@@ -107,7 +152,7 @@
     },
     "grafana broadcaster-report-grpc": {
       "selector": ".react-grid-layout",
-      "link": "https://grafana.tokopedia.net/d/aJEtWb0Mk/gcp-kube-mirrored-cluster-broadcaster-report-grpc?orgId=5&refresh=10s",
+      "link": "https://grafana.tokopedia.net/d/S0j02z-7k/gcp-node-alert-broadcaster-report-grpc?orgId=5&refresh=10s",
       "variabledParams": "orgId=5&refresh=10s&from={beginTimestamp}&to={endTimestamp}"
     },
     "grafana broadcaster-report-cron": {
@@ -124,55 +169,6 @@
       "selector": ".react-grid-layout",
       "link": "https://grafana.tokopedia.net/d/v2OvTh1nz/gcp-node-alert-groupchat-socketv2?orgId=5&from=now-15m&to=now",
       "variabledParams": "orgId=5&from={beginTimestamp}&to={endTimestamp}"
-    },
-    "grafana redislab-broadcaster-report": {
-      "selector": ".react-grid-layout",
-      "link": "https://grafana.tokopedia.net/d/A4yLlmVMkBc/gcp-redislab-broadcaster-report?orgId=5",
-      "variabledParams": "orgId=5&from={beginTimestamp}&to={endTimestamp}"
-    },
-    "datadog play-public": {
-      "selector": "#sub_board",
-      "link": "https://app.datadoghq.com/dashboard/cf4-2m2-nrn/play-public?from_ts=1632821329872&to_ts=1632824929872&live=true",
-      "variabledParams": "tpl_var_channel_wib={channelId}&from_ts={beginTimestamp}&to_ts={endTimestamp}&live=false",
-      "scrapper": [
-        {
-          "selector": ".widget.query_value.widget--with_title",
-          "titleSelector": ".widget__title-text",
-          "titleText": "",
-          "valueSelector": [".query-value__value", ".query-value__unit"]
-        },
-        {
-          "selector": "#widget_1327558339247072",
-          "titleSelector": ".widget__title-text",
-          "titleText": "",
-          "valueSelector": [".query-value__value", ".query-value__unit"]
-        }
-      ]
-    },
-    "datadog groupchat": {
-      "selector": "#sub_board",
-      "link": "https://app.datadoghq.com/dashboard/nae-2rb-chw/play-groupchat-socket-v2?from_ts=1631165114208&to_ts=1631168714208&live=true",
-      "variabledParams": "tpl_var_channel_wib={channelId}&from_ts={beginTimestamp}&to_ts={endTimestamp}&live=false"
-    },
-    "datadog play DB": {
-      "selector": "#sub_board",
-      "link": "https://app.datadoghq.com/dashboard/nfx-j4d-dws/peasant-database-dashboard?tpl_var_database=tokopedia-play&from_ts=1631165148703&to_ts=1631168748703&live=true",
-      "variabledParams": "tpl_var_database=tokopedia-play&from_ts={beginTimestamp}&to_ts={endTimestamp}&live=false"
-    },
-    "datadog play-3rd-party": {
-      "selector": "#sub_board",
-      "link": "https://app.datadoghq.com/dashboard/85w-nke-uyd/play-3rd-party?from_ts=1632844258026&to_ts=1632847858026&live=true",
-      "variabledParams": "from_ts={beginTimestamp}&to_ts={endTimestamp}&live=false"
-    },
-    "datadog play-broadcaster": {
-      "selector": "#sub_board",
-      "link": "https://app.datadoghq.com/dashboard/wqm-dgh-dtb/cmp-broadcaster?from_ts=1632844390874&to_ts=1632847990874&live=true",
-      "variabledParams": "from_ts={beginTimestamp}&to_ts={endTimestamp}&live=false"
-    },
-    "datadog broadcaster DB": {
-      "selector": "#sub_board",
-      "link": "https://app.datadoghq.com/dashboard/nfx-j4d-dws/peasant-database-dashboard?tpl_var_database=tokopedia-broadcaster&from_ts=1633673762789&to_ts=1633677362789&live=true",
-      "variabledParams": "tpl_var_database=tokopedia-broadcaster&from_ts={beginTimestamp}&to_ts={endTimestamp}&live=false"
     }
   }
 }

@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "moment": "^2.29.1",
+    "playwright": "^1.19.2",
     "puppeteer": "^10.4.0"
   },
   "devDependencies": {

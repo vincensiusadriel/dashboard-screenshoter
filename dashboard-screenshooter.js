@@ -63,6 +63,11 @@ const replaceWithVar = (toReplace, globalVar, withDoubleQuote) => {
         i++
     }
 
+    //insurance if no closing bracket found
+    if (startVar)  {
+        finishString  += `{${variableName}`
+    }
+
     try {
         let result = eval(finishString)
         return result == null ? "" : result

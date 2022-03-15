@@ -8,7 +8,7 @@
     "endTimestamp": "toTimestamp({end})",
     "channelId": "319470"
   },
-  "specific": ["grafana redislab-broadcaster-report"],
+  "specific": [],
   "links": {
     "newrelic play interactive": {
       "selector": ".react-grid-layout",
